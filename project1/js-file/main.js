@@ -1,10 +1,9 @@
-console.log('Hello, I here');
-
 
 //let displayBlank = document.querySelector('.display-blank');
 //displayBlank.style.visibility = "hidden"; 
-let input = document.querySelector('input');
-let setWord = document.querySelector('#set-word');
+var input = document.querySelector('input');
+var setWord = document.querySelector('#set-word');
+
 
 console.log(input)
 
@@ -17,16 +16,37 @@ setWord.addEventListener('click', function(e){
 	
 	
 	//assign input from user to class blank
-	let diplayContent = document.querySelector('.blank').innerText = input.value;
+	// let displayContent = document.querySelector('.blank').innerText = input.value;
+	// let str = "";
+	// let content = displayContent.split("");
+	// for(let i = 0; i <= content.length; i++){
+	// 	str = content[i];
+	// 	console.log(str);
+	// }
 	
+	// to split the input from user to make it to an array
+	var content = input.value.split("");
+	var arr = [];
 	
+	for(var i = 0; i < content.length; i++){
+		arr.push(content[i]);
+
+	}
+
 	
 	
 })
 
 
+
+
+
+
+
+
 function displayGuessingWord(){
-	let emptySpace = document.querySelector('.blank');
+	//let
+	var emptySpace = document.querySelector('.blank');
 	emptySpace.classList.toggle('.display-empty')
 
 }
