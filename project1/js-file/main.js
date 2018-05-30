@@ -2,14 +2,14 @@
 //let displayBlank = document.querySelector('.display-blank');
 //displayBlank.style.visibility = "hidden"; 
 var input = document.querySelector('input');
-var setWord = document.querySelector('#set-word');
+var setWord = document.querySelector('#form');
 var arr = [];
 
 
 console.log(input)
 
 // after the user types any word, either click on the botton or enter the form will disappear
-setWord.addEventListener('click', function(e){
+setWord.addEventListener('submit', function(e){
 	e.preventDefault();
 
 	//after user hit enter, form will be hidden
@@ -42,9 +42,10 @@ setWord.addEventListener('click', function(e){
 	if(arr.length > 0){
 		for(var i = 0; i < arr.length; i++){
 			var div = document.createElement('div');
-			var addEmptyClass = div.classList.add('display-empty');
-			var addChild = document.querySelector('.blank').appendChild(div);
-			console.log(addChild);
+			div.classList.add('display-empty');
+			div.innerText = arr[i].toUpperCase();
+			document.querySelector('.blank').appendChild(div);
+			
 
 		}
 
@@ -53,18 +54,6 @@ setWord.addEventListener('click', function(e){
 
 })
 
-// console.log(`length is ${arr.length}`);
-
-// if(arr.length > 0){
-// 	for(var i = 0; i < arr.length; i++){
-// 		var div = document.createElement('div');
-// 		var addEmptyClass = div.classList.add('display-empty');
-// 		var addChild = document.querySelector('.blank').appendChild(div);
-// 		console.log(addChild);
-
-// 	}
-
-// }
 
 
 
