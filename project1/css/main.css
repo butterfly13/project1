@@ -1,3 +1,10 @@
 body {
     background-color: rgb(155, 204, 204);
 }
+
+.display-empty {
+	font-size: 20px;
+	background-color: black;
+	color: white;
+
+}
