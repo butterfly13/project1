@@ -71,7 +71,7 @@ input {
 
 .display-empty {
 	/*display: none;*/
-	font-size: 20px;
+	/*font-size: 20px;*/
 	background-color: yellow;
 	color: black;
 	width: 30px;
@@ -96,5 +96,6 @@ input {
 
 span {
 	opacity: 0;
+	font-size: 25px;
 }
 
