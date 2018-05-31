@@ -3,7 +3,9 @@
 //displayBlank.style.visibility = "hidden"; 
 var input = document.querySelector('input');
 var setWord = document.querySelector('#form');
-var arr = [];
+var content = []
+var blankSpace = document.querySelector('.blank');
+
 
 
 console.log(input)
@@ -16,42 +18,41 @@ setWord.addEventListener('submit', function(e){
 	document.querySelector('form').style.visibility = 'hidden';
 	
 	
-	//assign input from user to class blank
-	// let displayContent = document.querySelector('.blank').innerText = input.value;
-	// let str = "";
-	// let content = displayContent.split("");
-	// for(let i = 0; i <= content.length; i++){
-	// 	str = content[i];
-	// 	console.log(str);
-	// }
-	
 	// to split the input from user to make it to an array
-	var content = input.value.split("");
-	//var arr = [];
+	content = input.value.split("");
 	
-	for(var i = 0; i < content.length; i++){
-		arr.push(content[i]);
-
-	}
 
 
-	console.log(arr);
+	console.log(content);
 
-	console.log(`length is ${arr.length}`);
+	console.log(`length is ${content.length}`);
 
-	//if user enters any letter, it will create no. of divs according to the arr.lenght
-	if(arr.length > 0){
-		for(var i = 0; i < arr.length; i++){
+	//if user enters any letter, it will create no. of divs according to the content.lenght
+	if(content.length > 0){
+		
+		for(var i = 0; i < content.length; i++){
 			var div = document.createElement('div');
-			div.classList.add('display-empty');
-			document.querySelector('.blank').appendChild(div);
+			div.classList.add('underline');
+			blankSpace.appendChild(div);
+			var span = document.createElement('span')	
+			div.appendChild(span); // add a span to 
+			span.innerText = content[i];
+
+
+			 //div.innerText = arr[i].toUpperCase();
+			//blankSpace.appendChild(div);
+
+		
 			//assign each item in the array to each div
 			//div.innerText = arr[i].toUpperCase();
-			div.innerText = arr[i].toUpperCase();
-			div.style.display = "none";
-		
+			// div.innerText = arr[i].toUpperCase();
+			//div.style.display = "block";
 
+			div.style.display = "block";
 		}
+
+		
+			
 
 	} //end if statement
 
