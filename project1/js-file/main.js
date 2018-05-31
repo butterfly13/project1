@@ -39,15 +39,6 @@ setWord.addEventListener('submit', function(e){
 			span.innerText = content[i];
 
 
-			 //div.innerText = arr[i].toUpperCase();
-			//blankSpace.appendChild(div);
-
-		
-			//assign each item in the array to each div
-			//div.innerText = arr[i].toUpperCase();
-			// div.innerText = arr[i].toUpperCase();
-			//div.style.display = "block";
-
 			div.style.display = "block";
 		}
 
@@ -56,43 +47,37 @@ setWord.addEventListener('submit', function(e){
 
 	} //end if statement
 
-	//if the p2 player mouse click on letter, it will compare that letter the the arr. 
+	//if the p2 player mouse click on letter, it will compare that letter the the content. 
 	//If there is matching letter(s), it will display on the div
-	var checkButton = document.querySelector('.alphabet');
-	checkButton.addEventListener('click', function(e){
-		e.preventDefault();
+	var listOfAlphabet = document.querySelector('.list-of-alphabet');
+	listOfAlphabet.addEventListener('click', alphabetCheck)
 
-		var checkButton = document.getElementsByClassName('alphabet');
-		for(var i = 0; i < letterButton.length; i++){
-			console.log(letterButton[i]);
-		}
-
-		// for(var i = 0; i < arr.length; i++) {
-
-		// 	 if(arr[i] === this.innerText){
-		// 	 	var emptySpace = document.querySelectorAll('.display-empty')[i]
-		// 	 	emptySpace.style.display = 'block';
-		// 	 	console.log(emptySpace);
-		// 	 	// for(var j = 0; j < emptySpace.length; j++ ){
-		// 	 	// 	document.querySelector('.display-empty').style.visibility = 'visible'; 
-
-		// 	 	// }
-			 	
-		// 	 }
-		// } // end for loop
-	}) // end checkButton
+	 
 
 
 }) // end eventListener for set word
 
 
 
-// function displayGuessingWord(e){
-// 	e.preventDefault();
+ function alphabetCheck(e){
+		e.preventDefault();
 
-// 	if(e.target.className	=== 'alphabet')
-// 	var emptySpace = document.querySelector('.blank');
-// 	emptySpace.classList.toggle('.display-empty')
+			// get the value of each alphabet when user clicks and make it all to lowercase for comparison
+			var alphabet = e.target.innerText.toLowerCase();
+			var span = document.querySelectorAll('span');
 
-// }
+			
+			console.log(content);
+			console.log(alphabet);
+			// to loop over the array input and compare with the click botton if it matches
+			//if it matches, will display that letter
+			content.forEach(function(currentContent, index){
+				if (currentContent === alphabet){
+					span[index].style.opacity = "1";
+				}
+				
+			});
+
+		
+	} // end alphabetCheck function
 
