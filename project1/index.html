@@ -4,52 +4,56 @@
         <meta charset="utf-8">
         <title>Project1- Hangman</title>
         <link rel="stylesheet" href="./css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div>Player 1</div>
-            <div class= "score p1"></div>
-            <div>:</div>
-            <div class="score p2"></div>
-            <div>Player 2</div>
-        </header>
-        <main>
-            <form id="form">
-                <input type="text" name="word" class ="get-word" placeholder="enter word here">
-                <button type="submit" id="set-word">Enter Word</button>
-            </form>
-            <div class="blank">
-               <!-- <div class="blank"></div>-->
-            </div>
-            <div class="list-of-alphabet">
-                <button>A</button>
-                <button>B</button>
-                <button>C</button>
-                <button>D</button>
-                <button>E</button>
-                <button>F</button>
-                <button>G</button>
-                <button>H</button>
-                <button>I</button>
-                <button>J</button>
-                <button>K</button>
-                <button>L</button>
-                <button>M</button>
-                <button>N</button>
-                <button>O</button>
-                <button>P</button>
-                <button>Q</button>
-                <button>R</button>
-                <button>S</button>
-                <button>T</button>
-                <button>U</button>
-                <button>V</button>
-                <button>W</button>
-                <button>X</button>
-                <button>Y</button>
-                <button>Z</button>
-            </div>
-        </main>
+        <div class="container">
+            <header>
+                <h1>Hangman Game</h1>
+                <div>Player 1</div>
+                <div class= "score p1">0</div>
+                <div>Score</div>
+                <div class="score p2">0</div>
+                <div>Player 2</div>
+            </header>
+            <main>
+                <form id="form">
+                    <input type="text" name="word" class ="get-word" placeholder="enter word here"> <br>
+                    <button type="submit" id="set-word">Enter Word</button>
+                </form>
+                <div class="blank">
+                   
+                </div>
+                <div class="list-of-alphabet">
+                    <button class="alphabet a">A</button>
+                    <button class="alphabet b">B</button>
+                    <button class="alphabet c">C</button>
+                    <button class="alphabet d">D</button>
+                    <button class="alphabet e">E</button>
+                    <button class="alphabet f">F</button>
+                    <button class="alphabet g">G</button>
+                    <button class="alphabet h">H</button>
+                    <button class="alphabet i">I</button>
+                    <button class="alphabet j">J</button>
+                    <button class="alphabet k">K</button>
+                    <button class="alphabet l">L</button>
+                    <button class="alphabet m">M</button>
+                    <button class="alphabet n">N</button>
+                    <button class="alphabet o">O</button>
+                    <button class="alphabet p">P</button>
+                    <button class="alphabet q">Q</button>
+                    <button class="alphabet r">R</button>
+                    <button class="alphabet s">S</button>
+                    <button class="alphabet t">T</button>
+                    <button class="alphabet u">U</button>
+                    <button class="alphabet v">V</button>
+                    <button class="alphabet w">W</button>
+                    <button class="alphabet x">X</button>
+                    <button class="alphabet y">Y</button>
+                    <button class="alphabet z">Z</button>
+                </div>
+            </main>
+        </div>
         <script src="js-file/main.js"></script>
     </body>
 </html>

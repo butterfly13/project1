@@ -39,29 +39,59 @@ setWord.addEventListener('submit', function(e){
 
 	console.log(`length is ${arr.length}`);
 
+	//if user enters any letter, it will create no. of divs according to the arr.lenght
 	if(arr.length > 0){
 		for(var i = 0; i < arr.length; i++){
 			var div = document.createElement('div');
 			div.classList.add('display-empty');
-			div.innerText = arr[i].toUpperCase();
 			document.querySelector('.blank').appendChild(div);
-			
+			//assign each item in the array to each div
+			//div.innerText = arr[i].toUpperCase();
+			div.innerText = arr[i].toUpperCase();
+			div.style.display = "none";
+		
 
 		}
 
-}
+	} //end if statement
+
+	//if the p2 player mouse click on letter, it will compare that letter the the arr. 
+	//If there is matching letter(s), it will display on the div
+	var checkButton = document.querySelector('.alphabet');
+	checkButton.addEventListener('click', function(e){
+		e.preventDefault();
+
+		var checkButton = document.getElementsByClassName('alphabet');
+		for(var i = 0; i < letterButton.length; i++){
+			console.log(letterButton[i]);
+		}
+
+		// for(var i = 0; i < arr.length; i++) {
+
+		// 	 if(arr[i] === this.innerText){
+		// 	 	var emptySpace = document.querySelectorAll('.display-empty')[i]
+		// 	 	emptySpace.style.display = 'block';
+		// 	 	console.log(emptySpace);
+		// 	 	// for(var j = 0; j < emptySpace.length; j++ ){
+		// 	 	// 	document.querySelector('.display-empty').style.visibility = 'visible'; 
+
+		// 	 	// }
+			 	
+		// 	 }
+		// } // end for loop
+	}) // end checkButton
 
 
-})
+}) // end eventListener for set word
 
 
 
+// function displayGuessingWord(e){
+// 	e.preventDefault();
 
+// 	if(e.target.className	=== 'alphabet')
+// 	var emptySpace = document.querySelector('.blank');
+// 	emptySpace.classList.toggle('.display-empty')
 
-function displayGuessingWord(){
-	//let
-	var emptySpace = document.querySelector('.blank');
-	emptySpace.classList.toggle('.display-empty')
-
-}
+// }
 
