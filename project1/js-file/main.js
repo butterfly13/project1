@@ -3,9 +3,11 @@
 //displayBlank.style.visibility = "hidden"; 
 var input = document.querySelector('input');
 var setWord = document.querySelector('#form');
+var getWord = document.querySelector('.get-word');
 var content = [];
 var blankSpace = document.querySelector('.blank');
 var numOfWrongClick = 0;
+var reset = document.querySelector('.restartButton');
 
 
 // after the user types any word, either click on the botton or enter the form will disappear
@@ -130,7 +132,17 @@ setWord.addEventListener('submit', function(e){
 
 		}
 
-	}
+	}// end wrongClick function
+
+//reset to the page
+reset.addEventListener('click', resetFunction);
+
+function resetFunction(){
+	
+	location.reload();
+	
+}
+
 
 	//Check for winner
 	function checkWinner (e){
