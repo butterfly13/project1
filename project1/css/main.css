@@ -11,14 +11,14 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	background-color: #a5b6d1;
-	padding: 20px 15px 5px 15px;
+	padding: 10px 15px 5px 15px;
 	font-family: 'Gloria Hallelujah', cursive;
 
 }
 
 
 header {
-	padding-top: 20px;
+	/*padding-top: 10px;*/
 	display: grid;
 	grid-template-columns: 34% 10% 10% 10% 30%;
 	grid-template-rows: 50% 50%;
@@ -35,14 +35,14 @@ h1 {
 }
 
 main {
-	padding-top: 50px;
+	padding-top: 20px;
 }
 
 input {
 	width: 50%;
 	height: 50px;
 	text-align: center;
-	margin-bottom: 15px;
+	/*margin-bottom: 5px;*/
 
 }
 
@@ -55,9 +55,15 @@ input {
 
 }
 
+.alertText {
+	display: none;
+	color: red;
+}
+
 .blank {
 	display: flex;
 	justify-content: flex-start;
+	padding-left: 40px;
 }
 
 .underline {
@@ -69,16 +75,16 @@ input {
 
 }
 
-.display-empty {
-	/*display: none;*/
-	/*font-size: 20px;*/
+/*.display-empty {
+	display: none;
+	font-size: 20px;
 	background-color: yellow;
 	color: black;
 	width: 30px;
 	height: 30px;
 	border-bottom: 2px solid black;
 
-}
+}*/
 
 .alphabet {
 	width: 50px;
@@ -94,7 +100,7 @@ input {
 
 }
 
-span {
+span .displayText {
 	opacity: 0;
 	font-size: 25px;
 }

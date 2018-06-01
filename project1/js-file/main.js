@@ -35,7 +35,8 @@ setWord.addEventListener('submit', function(e){
 			var div = document.createElement('div');
 			div.classList.add('underline');
 			blankSpace.appendChild(div);
-			var span = document.createElement('span')	
+			var span = document.createElement('span');
+			span.classList.add('displayText');	
 			div.appendChild(span); // add a span to a div
 			// make the input array to display to uppercase 
 			//console.log(`uppercase input ${content[i].toUpperCase()}`);
@@ -48,7 +49,11 @@ setWord.addEventListener('submit', function(e){
 		}
 		
 
-	} //end if statement
+	} else {
+		var alertText = document.querySelector('.alertText');
+		alertText.style.display = "block";
+	} 
+	//end if statement
 
 
 	//if the p2 player mouse click on letter, it will compare that letter the the content. 
@@ -67,7 +72,7 @@ setWord.addEventListener('submit', function(e){
 			// get the value of each alphabet when user clicks and make it all to lowercase for comparison
 			// var alphabet = e.target.innerText.toLowerCase();
 			var alphabet = e.target.innerText;
-			var span = document.querySelectorAll('span');
+			var span = document.querySelectorAll('.displayText');
 
 			
 			console.log(content);
