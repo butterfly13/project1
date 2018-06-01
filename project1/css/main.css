@@ -2,7 +2,7 @@ body {
    
     margin: 0;
     background-color: #a2a3a5;
-    /*font-family: 'Gloria Hallelujah', cursive;*/
+
 }
 
 .container {
@@ -12,7 +12,7 @@ body {
 	text-align: center;
 	background-color: #a5b6d1;
 	padding: 10px 15px 5px 15px;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Play', sans-serif;
 
 }
 
@@ -32,6 +32,7 @@ header div {
 h1 {
 	grid-column: 1 / span 5;
 	grid-row: 1 / span 1;
+	font-family: 'Gloria Hallelujah', cursive;
 }
 
 main {
@@ -67,7 +68,7 @@ input {
 }
 
 .underline {
-	border-bottom: 2px solid red;
+	/*border-bottom: 2px solid red;*/
 	display: block;
 	width: 40px;
 	margin-left: 10px;
@@ -86,6 +87,12 @@ input {
 
 }*/
 
+.gameOver {
+	display: none;
+	color: red;
+	font-size: 40px;
+}
+
 .alphabet {
 	width: 50px;
 	height: 50px;
@@ -100,8 +107,25 @@ input {
 
 }
 
-span .displayText {
+/*span */
+.displayText {
 	opacity: 0;
-	font-size: 25px;
+	font-size: 28px;
+}
+
+footer {
+	text-align: left;
+}
+
+.restartButton {
+	display: none;
+	width: 150px;
+	height: 80px;
+	font-size: 30px;
+	background-color: red;
+	border-radius: 20px;
+	color: white;
+	margin: 0 auto;
+
 }
 

@@ -3,8 +3,9 @@
 //displayBlank.style.visibility = "hidden"; 
 var input = document.querySelector('input');
 var setWord = document.querySelector('#form');
-var content = []
+var content = [];
 var blankSpace = document.querySelector('.blank');
+var numOfWrongClick = 0;
 
 
 // after the user types any word, either click on the botton or enter the form will disappear
@@ -31,29 +32,57 @@ setWord.addEventListener('submit', function(e){
 	//after user hit enter, form will be hidden
 	if(content.length > 0){
 		document.querySelector('form').style.visibility = 'hidden';
+
 		for(var i = 0; i < content.length; i++){
 			var div = document.createElement('div');
-			div.classList.add('underline');
-			blankSpace.appendChild(div);
-			var span = document.createElement('span');
-			span.classList.add('displayText');	
-			div.appendChild(span); // add a span to a div
+			if(content[i] === "") {
+				 	//var div = document.createElement('div');
+				div.classList.add('underline');
+				var addBlank = blankSpace.appendChild(div);
+				div.style.borderBottom = "hidden";
+				var span = document.createElement('span');
+				span.classList.add('displayText');	
+				div.appendChild(span); // add a span to a div
+				// make the input array to display to uppercase 
+				//console.log(`uppercase input ${content[i].toUpperCase()}`);
+				console.log(content[i].toUpperCase());
+				span.innerText = content[i];
+
+				
+			} else {
+					//var div = document.createElement('div');
+				div.classList.add('underline');
+				blankSpace.appendChild(div).style.borderBottom = "2px solid yellow";
+				var span = document.createElement('span');
+				span.classList.add('displayText');	
+				div.appendChild(span); // add a span to a div
+				// make the input array to display to uppercase 
+				//console.log(`uppercase input ${content[i].toUpperCase()}`);
+				console.log(content[i].toUpperCase());
+				span.innerText = content[i];
+			
+			}
+			//var div = document.createElement('div');
+			// div.classList.add('underline');
+			// blankSpace.appendChild(div);
+			// var span = document.createElement('span');
+			// span.classList.add('displayText');	
+			// div.appendChild(span); // add a span to a div
 			// make the input array to display to uppercase 
 			//console.log(`uppercase input ${content[i].toUpperCase()}`);
-			console.log(content[i].toUpperCase());
-			span.innerText = content[i];
+			//console.log(content[i].toUpperCase());
+			//span.innerText = content[i];
 			
 			
 
 			div.style.display = "block";
 		}
 		
-
+		//if user doesn't enter anything, this warning will pop-up the warning text
 	} else {
 		var alertText = document.querySelector('.alertText');
 		alertText.style.display = "block";
-	} 
-	//end if statement
+	} //end if statement
 
 
 	//if the p2 player mouse click on letter, it will compare that letter the the content. 
@@ -73,8 +102,6 @@ setWord.addEventListener('submit', function(e){
 			// var alphabet = e.target.innerText.toLowerCase();
 			var alphabet = e.target.innerText;
 			var span = document.querySelectorAll('.displayText');
-
-			
 			console.log(content);
 			console.log(alphabet);
 			// to loop over the array input and compare with the click botton if it matches
@@ -82,10 +109,39 @@ setWord.addEventListener('submit', function(e){
 			content.forEach(function(currentContent, index){
 				if (currentContent === alphabet){
 					span[index].style.opacity = "1";
-				}
+				} 
 				
-			});
+			}); // end forEach
+
+			if((content.indexOf(alphabet) < 0) ){
+				wrongClick();
+			}
 
 		
 	} // end alphabetCheck function
+
+	function wrongClick (){
+		numOfWrongClick ++;
+		console.log(`number of wrong click ${numOfWrongClick}`);
+		if(numOfWrongClick === 10){
+			console.log("game over!!!!");
+			document.querySelector('.gameOver').style.display = "block";
+			document.querySelector('.restartButton').style.display = "block";
+
+		}
+
+	}
+
+	//Check for winner
+	function checkWinner (e){
+		e.preventDefault();
+		var winner = document.querySelector('body')
+		if(numOfWrongClick > 10){
+			winner.style.display.innerHTML = "<h1>GAME OVER";
+		} else {
+			winner.style.display.innerHTML = "<h1>YOU ARE THE WINNER!!!</h1>"
+		}
+
+
+	}
 

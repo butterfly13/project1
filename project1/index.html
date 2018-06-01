@@ -5,6 +5,7 @@
         <title>Project1- Hangman</title>
         <link rel="stylesheet" href="./css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -20,8 +21,9 @@
                 <form id="form">
                     <input type="text" name="word" class ="get-word" placeholder="enter word here"> 
                     <button type="submit" id="set-word">Enter Word</button> <br>
-                    <span class="alertText">Please enter alphabet letters</span>
+                    <span class="alertText">Please enter alphabet letters!!!</span>
                 </form>
+                <span class="gameOver">GAME OVER!!!!</span>
                 <div class="blank">
                    
                 </div>
@@ -53,8 +55,19 @@
                     <button class="alphabet y">Y</button>
                     <button class="alphabet z">Z</button>
                 </div>
+                <button class="restartButton"> Start Over</button>
             </main>
+            <footer>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>One player will enter word(s) in the input field for the another player to guess</li>
+                    <li>Another player will try to guess by clicking the alphabet bottons that they think will have in that the word</li>
+                    <li>If there are matching letter(s), will be appear on the blank space</li>
+                    <li>Player will be allowed to click wrong letter for 10 times. After that game will be over</li>
+                </ol>
+            </footer>
         </div>
+
         <script src="js-file/main.js"></script>
     </body>
 </html>
