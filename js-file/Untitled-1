@@ -1,0 +1,54 @@
+
+db.restaurants.find({"name": "Bibimbab"}).pretty()
+//add state property
+db.restaurants.update(
+    {"name": "Bibimbab"},
+    {$set: 
+        {
+            "address.state": "DC"
+        }
+    }
+)
+
+db.restaurants.find().pretty()
+
+db.restaurants.update(
+    {"_id": ObjectId("5b16e22880e0ff31250cf236")},
+    {$set:
+        {
+             "rating": 4.5
+        }
+       
+    }
+)
+
+db.restaurants.update(
+    {"_id": ObjectId("5b16e3ee80e0ff31250cf237")},
+    {$set:
+        {
+            "rating": 4
+        }
+    }
+)
+
+db.restaurants.update(
+    {"name": "Cookies Corner"},
+    {$set:
+        {
+            "address.street": "5555 15St NW"
+        }
+    }
+)
+
+db.restaurants.update(
+    {"name": "Cookies Corner"},
+    {$set: 
+            {
+            "reviews": 
+                {
+                    "reviewText": "not so good",
+                    reviewName: "Jimmy"
+                }
+            }
+    }
+ )
