@@ -1,7 +1,7 @@
 Project1 : Hangman Game
 ========================
 
-This Hangman game is built for 2 players. One player will enter any words and another player will try to guess by clicking on the alphabet button. If there is a match, it will display on the blank space.
+This Hangman game is built for 2 players. One player will enter any words for another player to guess. The other player will try to guess by clicking on the alphabet button. If there is a match, it will display the matching alphabet(s) on the blank space.
 
 
 Explanations of the Technologies Used
@@ -39,7 +39,6 @@ Unsolved Problems
 -----------------
 
 - When the user enter the word and there is a blank space, I would like to make the underline element not to show up.
-- If the user gets the word rihgt, I would like to display " you are the winner"
 - I would like to track the score for both users. Whoever get 3 scores first, will be the winner.
 - I would like to add some kind of timer to remind the user that how many lifes they have left.
 
